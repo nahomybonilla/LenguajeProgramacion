@@ -11,7 +11,7 @@ class MYSQLDB:
         
     def connect (self):
         try:
-            if (self.connect == None):
+            if (self.connection == None):
                 self.connection = mysql.connector.connect (
                     host = self.host,
                     user = self.user,
@@ -48,3 +48,6 @@ print ("Conectando")
             
 db.connect()
 categorias = db.execute_query("select * from categorias")
+print (categorias)
+
+#db.disconnect()
